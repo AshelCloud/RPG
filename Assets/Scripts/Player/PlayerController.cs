@@ -15,6 +15,8 @@ namespace Player
         public Rigidbody2D Rigidbody { get; private set; }
         public Animator Anim { get; private set; }
 
+        public bool Grounded { get; set; }
+
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
@@ -42,6 +44,13 @@ namespace Player
                 if (!Input.GetKey(KeyCode.A)) { Flip(false); }
             }
 
+            //Jump
+            if(Input.GetKeyDown(KeyCode.Space) && Grounded)
+            {
+                Rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+
+            //Animation
             if(direction.x != 0)
             {
                 Anim.Play("Run");
