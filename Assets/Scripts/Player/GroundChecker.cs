@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Player
+namespace Ashel
 {
     public class GroundChecker : MonoBehaviour
     {
-        private PlayerController root { get; set; }
+        private Player root { get; set; }
 
         public LayerMask ground;
         public float radius;
 
         private void Awake()
         {
-            root = transform.root.GetComponent<PlayerController>();
+            root = transform.root.GetComponent<Player>();
         }
 
         private void Update()

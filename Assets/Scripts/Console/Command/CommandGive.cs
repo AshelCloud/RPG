@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Ashel;
 
-namespace Console
+namespace Ashel
 {
     public class CommandGive : ConsoleCommand
     {
@@ -34,7 +33,14 @@ namespace Console
             }
 
             //Give Item
-            Debug.Log("Give Item: " + code.ToString());
+            var item = ItemDataBase.GetItem(code);
+            if(item == null)
+            {
+                Debug.LogError("There is no item with code.");
+                return false;
+            }
+
+            GameObject.Find("Player").GetComponent<Ashel.Player>().AddItem(item);
 
             return true;
         }

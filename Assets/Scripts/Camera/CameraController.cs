@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 
-namespace Camera
+namespace Ashel
 {
     public class CameraController : MonoBehaviour
     {

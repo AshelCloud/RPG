@@ -1,13 +1,13 @@
-﻿using Console;
+﻿using Ashel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player
+namespace Ashel
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(CapsuleCollider2D))]
-    public class PlayerController : MonoBehaviour
+    public partial class Player : MonoBehaviour
     {
         [Header("Setting")]
         public float moveSpeed = 1f;
@@ -17,13 +17,13 @@ namespace Player
 
         public bool Grounded { get; set; }
 
-        private void Awake()
+        private void InitializeController()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
-            Anim = transform.Find("Model").GetComponent<Animator>();
+            Anim = Model.GetComponent<Animator>();
         }
 
-        private void Update()
+        private void Movement()
         {
             //Movement
             if(DeveloperConsole.IsEnable) { return; }
@@ -51,11 +51,16 @@ namespace Player
             }
 
             //Animation
-            if(direction.x != 0)
+            if(!Grounded)
+            {
+                Anim.Play("Jump");
+            }
+
+            if (direction.x != 0 && Grounded)
             {
                 Anim.Play("Run");
             }
-            else
+            else if(Grounded)
             {
                 Anim.Play("Idle");
             }
