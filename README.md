@@ -8,8 +8,7 @@ This project was created in version 2019.3.6f1.<br>
 It is designed to study the template of RPG games and I have no authority.<br>
 I hope many students learn more from this project.
 
-# 기능 Function
-## Developer Console
+# Developer Console
 ![Console](./images/Console.png) <br>
 개발자 콘솔을 통해 게임을 조작할 수 있습니다.<br>
 아이템 지급과 플레이어의 속도 등 개발자가 테스트할 수 있는 모든 부분을 조작이 가능하게 할 수 있습니다.<br>
