@@ -12,12 +12,12 @@ I hope many students learn more from this project.
 ## Developer Console
 ![Console](./images/Console.png) <br>
 개발자 콘솔을 통해 게임을 조작할 수 있습니다.<br>
-아이템 지급과 플레이어의 속도 등 개발자가 테스트할 수 있는 모든 부분을 조작이 가능하게 했습니다.<br>
+아이템 지급과 플레이어의 속도 등 개발자가 테스트할 수 있는 모든 부분을 조작이 가능하게 할 수 있습니다.<br>
 명령어는 모두 소문자로 시작합니다.<br>
 
-The command starts with all lowercase letters.<br>
 You can manipulate the game through the developer console.<br>
-We made it possible for developers to manipulate everything they could test, including item payment and player speed.<br>
+All parts that can be tested by developers, such as item payment and player speed, can be manipulated.<br>
+The command starts with all lowercase letters.<br>
 
 ## 명령어 Command
 quit<br>
