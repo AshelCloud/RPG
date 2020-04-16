@@ -25,3 +25,9 @@ give<br>
 
 # 인벤토리 Inventory
 ## 장비창 Equipments
+![Inventory](./images/Inventory.png) <br>
+인벤토리의 처음 두번째슬롯은 장비슬롯입니다.<br>
+첫번째슬롯은 머리, 두번째슬롯은 무기 슬롯입니다.<br>
+
+The first second slot in the inventory is the equipment slot.<br>
+The first is the head, the second is the weapons slot.<br>
