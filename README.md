@@ -23,10 +23,18 @@ quit<br>
 give [ItemCode]<br>
 
 # 인벤토리 Inventory
-## 장비창 Equipments
+## 장비칸 Equipments Slot
 ![Inventory](./images/Inventory.png) <br>
 인벤토리의 처음 두번째슬롯은 장비슬롯입니다.<br>
 첫번째슬롯은 머리, 두번째슬롯은 무기 슬롯입니다.<br>
 
 The first second slot in the inventory is the equipment slot.<br>
 The first is the head, the second is the weapons slot.<br>
+
+## 아이템칸 Item Slot
+나머지 슬롯은 아이템 슬롯입니다.<br>
+장비슬롯에 들어가지 못한 장비나 아이템을 저장합니다.<br>
+
+The remaining slots are item slots.<br>
+Save the equipment or items that have not entered the equipment slot.<br>
+
