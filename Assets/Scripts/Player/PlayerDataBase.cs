@@ -28,6 +28,7 @@ namespace Ashel
                     if(EquipHead == null)
                     {
                         EquipItem(item);
+                        return;
                     }
                 break;
 
@@ -35,6 +36,7 @@ namespace Ashel
                     if(EquipWeapon == null)
                     {
                         EquipItem(item);
+                        return;
                     }
                 break;
             }

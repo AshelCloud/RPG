@@ -20,13 +20,16 @@ namespace Ashel
             SetRatioItemImage();
         }
 
-        private void Update()
+        public void AddItem(Item item)
         {
-            if(Item == null) { return; }
+            Item = item;
 
-            var image = transform.GetChild(0);
+            var image = transform.GetChild(0).GetComponent<Image>();
 
-            image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + Item.TextureName);
+            image.sprite = Resources.Load<Sprite>("Sprites/" + Item.TextureName);
+            image.SetNativeSize();
+
+            SetRatioItemImage();
         }
 
         //A : B 는 C : X 일때 X = (B * C) / A
@@ -36,7 +39,6 @@ namespace Ashel
 
             var imageSize = rect.sizeDelta;
 
-            //A = imageSize.x, B = imageSize.y, C = imageSize.x -= tmp
             if(imageSize.x > Ratio.x)
             {
                 float tmp = imageSize.x - Ratio.x;
@@ -46,7 +48,6 @@ namespace Ashel
                 imageSize.y = (imageSize.y * imageSize.x) / ( imageSize.x + tmp );
             }
 
-            //A = imageSize.y, B = imageSize.x, C = imageSize.y -= tmp
             if (imageSize.y > Ratio.y)
             {
                 float tmp = imageSize.y - Ratio.y;

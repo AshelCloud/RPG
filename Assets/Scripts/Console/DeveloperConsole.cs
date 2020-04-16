@@ -54,10 +54,9 @@ namespace Ashel
             //Console On/Off
             if(Input.GetKeyDown(KeyCode.BackQuote))
             {
-                consoleCanvas.gameObject.SetActive( !consoleCanvas.gameObject.activeSelf );
-                IsEnable = consoleCanvas.gameObject.activeSelf;
+                consoleCanvas.gameObject.SetActive( IsEnable = !IsEnable );
 
-                if(consoleCanvas.gameObject.activeSelf == true)
+                if(IsEnable)
                 {
                     inputField.ActivateInputField();
                 }
@@ -67,7 +66,7 @@ namespace Ashel
                 }
             }
 
-            if(consoleCanvas.gameObject.activeSelf == false)
+            if(IsEnable == false)
             {
                 return;
             }

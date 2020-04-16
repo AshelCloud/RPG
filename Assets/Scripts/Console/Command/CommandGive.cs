@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Ashel;
 
 namespace Ashel
 {
@@ -40,7 +39,7 @@ namespace Ashel
                 return false;
             }
 
-            GameObject.Find("Player").GetComponent<Ashel.Player>().AddItem(item);
+            GameObject.Find("Player").GetComponent<Player>().AddItem(item);
 
             DeveloperConsole.Instance.AddMessageToConsole(item.Name + "이(가) 지급되었습니다.");
 
