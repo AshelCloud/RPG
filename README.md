@@ -23,8 +23,9 @@ quit<br>
 give [ItemCode]<br>
 
 # 인벤토리 Inventory
-## 장비칸 Equipments Slot
 ![Inventory](./Images/Inventory.png) <br>
+
+## 장비칸 Equipments Slot
 인벤토리의 처음 두번째슬롯은 장비슬롯입니다.<br>
 첫번째슬롯은 머리, 두번째슬롯은 무기 슬롯입니다.<br>
 
