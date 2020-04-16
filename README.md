@@ -21,7 +21,7 @@ We made it possible for developers to manipulate everything they could test, inc
 
 ## 명령어 Command
 quit<br>
-give<br>
+give [ItemCode]<br>
 
 # 인벤토리 Inventory
 ## 장비창 Equipments
