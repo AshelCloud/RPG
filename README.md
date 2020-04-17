@@ -8,6 +8,10 @@ This project was created in version 2019.3.6f1.<br>
 It is designed to study the template of RPG games and I have no authority.<br>
 I hope many students learn more from this project.
 
+## 에셋 Assets
+Free - 2D Simple Character : Swordman<br>
+Free - Nature pixel art base assets FREE<br>
+
 # Developer Console
 ![Console](./Images/Console.png) <br>
 개발자 콘솔을 통해 게임을 조작할 수 있습니다.<br>
