@@ -1,0 +1,17 @@
+{
+  "keys": [ 0, 1 ],
+  "values": [
+    {
+      "Code": 0,
+      "Name": "검남자의 헬멧",
+      "TextureName": "Hat-Helmet",
+      "Part": 0
+    },
+    {
+      "Code": 1,
+      "Name": "검남자의 검",
+      "TextureName": "Weapon-Sword",
+      "Part": 1
+    }
+  ]
+}

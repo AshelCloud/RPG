@@ -8,40 +8,27 @@ namespace Ashel
         Weapon,
         None
     }
-    public abstract class Item
-    {
-        public abstract int Code { get; protected set; }
-        public abstract string Name { get; protected set; }
-        public abstract string TextureName { get; protected set; }
-        public abstract ItemPart Part { get; protected set; }
 
-    }
-    public class SwordManHelmet : Item
+    [System.Serializable]
+    public class Item
     {
-        public override int Code { get; protected set; } = 0;
-        public override string Name { get; protected set; } = "검남자의 헬멧";
-        public override string TextureName { get; protected set; } = "Hat-Helmet";
-        public override ItemPart Part { get; protected set; } = ItemPart.Head;
-    }
-
-    public class SwordManSword : Item
-    {
-        public override int Code { get; protected set; } = 1;
-        public override string Name { get; protected set; } = "검남자의 검";
-        public override string TextureName { get; protected set; } = "Weapon-Sword";
-        public override ItemPart Part { get; protected set; } = ItemPart.Weapon;
+        public int Code;
+        public string Name;
+        public string TextureName;
+        public ItemPart Part;
     }
 
     //TODO: Json으로 파싱해서 데이터 받기
+
     public class ItemDataBase
     {
         static private bool Initialized { get; set; } = false;
-        static List<Item> database = new List<Item>();
+
+        static private Dictionary<int, Item> database = new Dictionary<int, Item>();
 
         private static bool Initialize()
         {
-            database.Add(new SwordManHelmet());
-            database.Add(new SwordManSword());
+            database = JsonManager.LoadJson<Serialization<int, Item>>(UnityEngine.Application.dataPath, "ItemData").ToDictionary();
 
             Initialized = true;
 
@@ -52,12 +39,9 @@ namespace Ashel
         {
             if(!Initialized) { Initialize(); }
 
-            foreach(var data in database)
+            if(database.ContainsKey(code))
             {
-                if(data.Code == code)
-                {
-                    return data;
-                }
+                return database[code];
             }
 
             return null;
@@ -69,9 +53,9 @@ namespace Ashel
 
             foreach (var data in database)
             {
-                if(data.Name == name)
+                if(data.Value.Name == name)
                 {
-                    return data;
+                    return data.Value;
                 }
             }
 

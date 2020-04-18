@@ -4,7 +4,9 @@ namespace Ashel
 {
     public partial class Player : MonoBehaviour
     {
+        [System.NonSerialized]
         public Item EquipHead = null;
+        [System.NonSerialized]
         public Item EquipWeapon = null;
 
         private void UpdateDataBase()
@@ -14,7 +16,7 @@ namespace Ashel
                 Head.GetChild(0).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/" + EquipHead.TextureName);
             }
 
-            if(EquipWeapon != null)
+            if (EquipWeapon != null)
             {
                 Weapon.GetChild(0).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/" + EquipWeapon.TextureName);
             }
