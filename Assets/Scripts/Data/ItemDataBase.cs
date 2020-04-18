@@ -19,7 +19,6 @@ namespace Ashel
     }
 
     //TODO: Json으로 파싱해서 데이터 받기
-
     public class ItemDataBase
     {
         static private bool Initialized { get; set; } = false;
@@ -28,7 +27,7 @@ namespace Ashel
 
         private static bool Initialize()
         {
-            database = JsonManager.LoadJson<Serialization<int, Item>>(UnityEngine.Application.dataPath, "ItemData").ToDictionary();
+            database = JsonManager.LoadJson<Serialization<int, Item>>(UnityEngine.Application.dataPath + "/Jsons", "ItemData").ToDictionary();
 
             Initialized = true;
 
