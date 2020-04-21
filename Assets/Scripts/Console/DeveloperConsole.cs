@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using MoonSharp.Interpreter;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ashel
 {
+    //콘솔 커맨드를 작성하기 위해 상속하는 클래스
     public abstract class ConsoleCommand
     {
         public abstract string Name { get; protected set; }
@@ -11,6 +13,7 @@ namespace Ashel
         public abstract string Description { get; protected set; }
         public abstract string Help { get; protected set; }
 
+        //콘솔에 커맨드 추가 후 메세지 출력
         protected void AddCommandToConsole()
         {
             DeveloperConsole.Instance.AddMessageToConsole("Command" + Name + " Added.");
@@ -71,7 +74,7 @@ namespace Ashel
                 return;
             }
 
-            //Send Command
+            //커맨드 전송
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 if( !string.IsNullOrEmpty(inputField.text))
@@ -79,13 +82,14 @@ namespace Ashel
                     AddMessageToConsole(inputField.text);
                     ParseInput(inputField.text);
 
+                    //InputField 초기화
                     inputField.text = "";
-
                     inputField.ActivateInputField();
                 }
             }
         }
 
+        //로그 콘솔창에 띄우기 위한 이벤트 함수 저장
         private void OnEnable()
         {
             Application.logMessageReceived += HandleLog;

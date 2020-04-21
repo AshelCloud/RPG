@@ -9,11 +9,11 @@ namespace Ashel
     public class Serialization<T>
     {
         [SerializeField]
-        List<T> list;
-        public List<T> ToList(){ return list; }
-        public Serialization(List<T> list)
+        T target;
+        public T ToObject(){ return target; }
+        public Serialization(T target)
         {
-            this.list = list;
+            this.target = target;
         }
     }
 

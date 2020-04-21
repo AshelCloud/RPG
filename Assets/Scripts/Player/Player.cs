@@ -21,6 +21,18 @@ namespace Ashel
             InitializeController();
         }
 
+        //private void Start()
+        //{
+        //    string filePath = System.IO.Path.Combine(Application.streamingAssetsPath, "Lua");
+        //    filePath = System.IO.Path.Combine(filePath, "Test.lua");
+
+        //    string text = System.IO.File.ReadAllText(filePath);
+
+        //    var lua = new Lua(text); 
+
+        //    Debug.Log(lua.Call("TestFuc", new object[] { "Cool! It's Working" } ).String);
+        //}
+
         private void Update()
         {
             UpdateDataBase();

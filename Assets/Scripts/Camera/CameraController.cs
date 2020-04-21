@@ -25,7 +25,6 @@ namespace Ashel
             }
         }
 
-
         private void LateUpdate()
         {
             Vector3 targetPosition = target.transform.position;

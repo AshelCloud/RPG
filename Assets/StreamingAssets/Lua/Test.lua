@@ -1,0 +1,2 @@
+function GetPlayer( Instance )
+end

@@ -1,5 +1,5 @@
 {
-  "keys": [ 0, 1 ],
+  "keys": [ 0, 1, 2 ],
   "values": [
     {
       "Code": 0,
@@ -12,6 +12,12 @@
       "Name": "검남자의 검",
       "TextureName": "Weapon-Sword",
       "Part": 1
+    },
+    {
+      "Code": 2,
+      "Name": "검남자의 방패",
+      "TextureName": "Shield",
+      "Part": 2
     }
   ]
 }

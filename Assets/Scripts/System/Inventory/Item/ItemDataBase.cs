@@ -27,7 +27,7 @@ namespace Ashel
 
         private static bool Initialize()
         {
-            database = JsonManager.LoadJson<Serialization<int, Item>>(UnityEngine.Application.dataPath + "/Jsons", "ItemData").ToDictionary();
+            database = JsonManager.LoadJson<Serialization<int, Item>>(UnityEngine.Application.streamingAssetsPath + "/Json", "ItemData").ToDictionary();
 
             Initialized = true;
 

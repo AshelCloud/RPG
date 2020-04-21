@@ -1,0 +1,3 @@
+function GetItem( code )
+	
+end
