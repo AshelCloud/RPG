@@ -15,10 +15,12 @@ Free - Nature pixel art base assets FREE<br>
 # Developer Console
 ![Console](./Images/Console.png) <br>
 개발자 콘솔을 통해 게임을 조작할 수 있습니다.<br>
+커맨드는 모두 Lua Script로 제작되었습니다.<br>
 아이템 지급과 플레이어의 속도 등 개발자가 테스트할 수 있는 모든 부분을 조작이 가능하게 할 수 있습니다.<br>
 명령어는 모두 소문자로 시작합니다.<br>
 
 You can manipulate the game through the developer console.<br>
+The command is all made with Lua Script.<br>
 All parts that can be tested by developers, such as item payment and player speed, can be manipulated.<br>
 The command starts with all lowercase letters.<br>
 
@@ -27,7 +29,10 @@ quit<br>
 give [ItemCode]<br>
 
 # 인벤토리 Inventory
-![Inventory](./Images/Inventory.png) <br>
+![Inventory](./Images/Inventory.png) <br> 
+인벤토리는 Json으로 데이터를 공유합니다.<br>
+
+Inventory shares data with Json.<br>
 
 ## 장비칸 Equipments Slot
 인벤토리의 처음 두번째슬롯은 장비슬롯입니다.<br>
