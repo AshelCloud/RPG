@@ -6,39 +6,21 @@ using UnityEngine;
 
 namespace Ashel
 {
-    public class Lua
-    {
-        Script Script { get; set; }
-
-        public Lua(string rawLuaCode)
-        {
-            Script = new Script();
-
-            UserData.RegistrationPolicy = InteropRegistrationPolicy.Automatic;
-
-            Script.DoString(rawLuaCode);
-        }
-
-        public DynValue Call(string key, object[] args)
-        {
-            DynValue result = Script.Call(Script.Globals[key], args);
-
-            return result;
-        }
-    }
-
     public class LuaManager
     {
         private static bool Initialized { get; set; } = false;
         private  static string LuaDirectoryPath { get; set; }
-        public static Dictionary<string, Lua> LuaFiles { get; private set; }
+        public static List<Script> LuaFiles;
 
         private static void Initialize()
         {
-            LuaFiles = new Dictionary<string, Lua>();
+            LuaFiles = new List<Script>();
+
             LuaDirectoryPath = Path.Combine(Application.streamingAssetsPath, "Lua");
 
             SetUpLuaFiles();
+
+            Initialized = true;
         }
 
         private static void SetUpLuaFiles()
@@ -53,16 +35,39 @@ namespace Ashel
                 {
                     string fileName = file.Name.Split('.')[0];
 
-                    LuaFiles.Add(fileName, new Lua(sr.ReadToEnd()));
+                    Script script = new Script();
+
+                    RegisterLua(script);
+                    script.DoString(sr.ReadToEnd());
+                    
+                    LuaFiles.Add(script);
                 }
             }
         }
 
-        public static DynValue Run(string fileName, string key, object[] args = null)
+        public static DynValue CallLuaFunction(string functionName, params object[] parameters)
         {
-            if(Initialized == false) { Initialize(); }
+            if( Initialized == false ) { Initialize(); }
 
-            return LuaFiles[fileName].Call(key, args);
+            foreach(var lua in LuaFiles)
+            {
+                if(lua.Globals[functionName] != null)
+                {
+                    return lua.Call(lua.Globals[functionName], parameters);
+                }
+            }
+            
+            return null;
+        }
+
+        private static void RegisterLua(Script script)
+        {
+            UserData.RegisterAssembly();
+
+            if(script.Globals != null)
+            {
+                script.Globals["Console"] = new Console();
+            }
         }
     }
 }

@@ -1,3 +1,0 @@
-function GetItem( code )
-	
-end

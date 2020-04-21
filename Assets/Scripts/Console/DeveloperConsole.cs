@@ -5,28 +5,9 @@ using UnityEngine.UI;
 
 namespace Ashel
 {
-    //콘솔 커맨드를 작성하기 위해 상속하는 클래스
-    public abstract class ConsoleCommand
-    {
-        public abstract string Name { get; protected set; }
-        public abstract string Command { get; protected set; }
-        public abstract string Description { get; protected set; }
-        public abstract string Help { get; protected set; }
-
-        //콘솔에 커맨드 추가 후 메세지 출력
-        protected void AddCommandToConsole()
-        {
-            DeveloperConsole.Instance.AddMessageToConsole("Command" + Name + " Added.");
-            DeveloperConsole.AddCommandToConsole(this);
-        }
-
-        public abstract bool RunCommand(string[] inputs);
-    }
-
     public class DeveloperConsole : MonoBehaviour
     {
         public static DeveloperConsole Instance { get; private set; }
-        public static Dictionary<string, ConsoleCommand> Commands { get; private set; }
 
         [Header("UI Components")]
         [SerializeField] private Canvas consoleCanvas = null;
@@ -47,9 +28,6 @@ namespace Ashel
             consoleCanvas.gameObject.SetActive(false);
             IsEnable = consoleCanvas.gameObject.activeSelf;
 
-            Commands = new Dictionary<string, ConsoleCommand>();
-
-            CreateCommands();
         }
 
         private void Update()
@@ -111,33 +89,25 @@ namespace Ashel
             consoleText.text += msg + "\n";
         }
 
-        private void CreateCommands()
-        {
-            CommandGive.CreateCommand();
-            CommandQuit.CreateCommand();
-        }
-
-        public static void AddCommandToConsole(ConsoleCommand _command)
-        {
-            Commands.Add(_command.Command, _command);
-        }
-
         private void ParseInput(string input)
         {
             string[] inputs = input.Split(null);
 
-            if(Commands.ContainsKey(inputs[0]))
+            string[] parameters = new string[inputs.Length - 1];
+            for (int i = 0; i < inputs.Length - 1; i++)
             {
-                bool result = Commands[inputs[0]].RunCommand(inputs);
+                parameters[i] = inputs[i + 1];
+            }
 
-                if(result == false)
-                {
-                    Debug.Log("Wrong Command!" + "<color=#ff0000>" + " Usage: " + Commands[inputs[0]].Help + "</color>");
-                }
+            DynValue result = LuaManager.CallLuaFunction(inputs[0], parameters);
+
+            if (result.Boolean == false)
+            {
+                //Debug.Log("Wrong Command!" + "<color=#ff0000>" + " Usage: " + Commands[inputs[0]].Help + "</color>");
             }
             else
             {
-                Debug.Log("Not Allowed Command!");
+                //Debug.Log("Not Allowed Command!");
             }
         }
     }

@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using MoonSharp.Interpreter;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Ashel
 {
+    [MoonSharpUserData]
     public partial class Player : MonoBehaviour
     {
         private Transform Model { get; set; }

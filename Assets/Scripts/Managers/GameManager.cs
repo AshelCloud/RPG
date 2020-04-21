@@ -11,6 +11,11 @@ namespace Ashel
     {
         private void Start()
         {
+            //LuaManager.CallLuaFunction("give", 0);
+        }
+
+        private void Update()
+        {
         }
     }
 }

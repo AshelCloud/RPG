@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MoonSharp.Interpreter;
+using UnityEngine;
 
 namespace Ashel
 {
@@ -48,6 +49,8 @@ namespace Ashel
 
         public void EquipItem(Item item)
         {
+            Debug.Log(item.Name);
+
             switch(item.Part)
             {
                 case ItemPart.Head:

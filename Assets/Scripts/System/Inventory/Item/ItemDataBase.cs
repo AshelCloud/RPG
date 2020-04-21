@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MoonSharp.Interpreter;
+using System.Collections.Generic;
 
 namespace Ashel
 {
@@ -9,6 +10,7 @@ namespace Ashel
         None
     }
 
+    [MoonSharpUserData]
     [System.Serializable]
     public class Item
     {
@@ -19,6 +21,7 @@ namespace Ashel
     }
 
     //TODO: Json으로 파싱해서 데이터 받기
+    [MoonSharpUserData]
     public class ItemDataBase
     {
         static private bool Initialized { get; set; } = false;
