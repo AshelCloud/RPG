@@ -1,11 +1,11 @@
-# RPG-Basic
+# RPG
 
 이 프로젝트는 2019.3.6f1버전으로 만들어졌습니다.<br>
-RPG게임의 템플릿을 공부하기 위한 목적으로 만들어졌으며 저는 어떠한 권한도 가지지 않습니다.<br>
+RPG게임을 공부하기 위한 목적으로 만들어졌으며 저는 어떠한 권한도 가지지 않습니다.<br>
 많은 학생들이 이 프로젝트를 통해 배우는것이 많아졌으면 좋겠습니다.<br>
 
 This project was created in version 2019.3.6f1.<br>
-It is designed to study the template of RPG games and I have no authority.<br>
+It was made for the purpose of studying RPG games and I have no authority.<br>
 I hope many students learn more from this project.
 
 ## 에셋 Assets
