@@ -27,7 +27,6 @@ namespace Ashel
 
             consoleCanvas.gameObject.SetActive(false);
             IsEnable = consoleCanvas.gameObject.activeSelf;
-
         }
 
         private void Update()

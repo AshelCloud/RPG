@@ -37,7 +37,7 @@ namespace Ashel
 
         private void Update()
         {
-            UpdateDataBase();
+            UpdateDataBase(); 
             Movement();
         }
     }

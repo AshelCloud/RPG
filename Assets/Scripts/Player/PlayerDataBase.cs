@@ -10,6 +10,10 @@ namespace Ashel
         [System.NonSerialized]
         public Item EquipWeapon = null;
 
+        [Header("Setting")]
+        public float moveSpeed = 1f;
+        public float jumpForce = 1f;
+
         private void UpdateDataBase()
         {
             if (EquipHead != null)
@@ -49,8 +53,6 @@ namespace Ashel
 
         public void EquipItem(Item item)
         {
-            Debug.Log(item.Name);
-
             switch(item.Part)
             {
                 case ItemPart.Head:

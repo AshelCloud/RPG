@@ -4,10 +4,11 @@ using UnityEditor;
 
 namespace Ashel
 {
+    //Lua를 위한 외부함수
     [MoonSharpUserData]
     public class Console
     {
-        public Player Player 
+        public Player Player
         {
             get
             {

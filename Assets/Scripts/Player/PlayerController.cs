@@ -9,9 +9,6 @@ namespace Ashel
     [RequireComponent(typeof(CapsuleCollider2D))]
     public partial class Player : MonoBehaviour
     {
-        [Header("Setting")]
-        public float moveSpeed = 1f;
-        public float jumpForce = 1f;
         public Rigidbody2D Rigidbody { get; private set; }
         public Animator Anim { get; private set; }
 
